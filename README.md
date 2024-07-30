@@ -2,9 +2,9 @@
 Kubernetes Controller to rolling restart a deployment pods on a change in configmap
 
 ## Description
-This controller performs rolling restart of deployment pods which is inspired by (https://github.com/k8spatterns/examples/tree/main/advanced/Controller/expose-controller)[k8spatterns] with limited functionality of making changes in data of configmap
+This controller performs rolling restart of deployment pods which is inspired by [k8spatterns](https://github.com/k8spatterns/examples/tree/main/advanced/Controller/expose-controller) with limited functionality of making changes in data of configmap
 
-This works in default namespace for webapp-config configmap and webapp deployment. 
+**Note:** This works in default namespace for webapp-config configmap and webapp deployment. 
 
 ## Getting Started
 
@@ -69,9 +69,19 @@ Now edit the data in configmap and save the changes
 kubectl edit cm webapp-config
 ```
 
+you will see the following lines in the logs of the controller:
+
+```sh
+2024-07-30T17:48:18+05:30	INFO	ConfigMap Updated: webapp-config
+2024-07-30T17:48:18+05:30	INFO	ConfigMap Data: map[message:working as expected!]
+2024-07-30T17:48:18+05:30	INFO	Triggered rolling restart for Deployment: webapp
+
+```
+
 After making the changes in configmap, you will see the pods of webapp deployment getting restarted.
 
 ```sh
 kubectl get pods -n default 
 ```
 
+Hit the curl again to see your updated message.
