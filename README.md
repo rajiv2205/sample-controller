@@ -2,7 +2,7 @@
 Kubernetes Controller to rolling restart a deployment pods on a change in configmap
 
 ## Description
-This controller performs rolling restart of deployment pods which is inspired by https://github.com/k8spatterns/examples/tree/main/advanced/Controller/expose-controller[k8spatterns] with limited functionality of making changes in data of configmap
+This controller performs rolling restart of deployment pods which is inspired by (https://github.com/k8spatterns/examples/tree/main/advanced/Controller/expose-controller)[k8spatterns] with limited functionality of making changes in data of configmap
 
 This works in default namespace for webapp-config configmap and webapp deployment. 
 
