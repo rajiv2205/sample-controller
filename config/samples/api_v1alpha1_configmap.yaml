@@ -1,0 +1,9 @@
+apiVersion: api.operatortest.io/v1alpha1
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: sample-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: configmap-sample
+spec:
+  # TODO(user): Add fields here
