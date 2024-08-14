@@ -16,11 +16,14 @@ This controller performs rolling restart of deployment pods which is inspired by
 
 ### To Run/Test On your Local Machine
 
-Start the Minikube
+Start the Minikube and execute the following commands to generate the CRD and apply it in your minikube cluster.
 
 ```sh
 minikube start
+make manifests
+make install
 ```
+
 To deploy sample app so that we can run the operator and test how it is restarting the deployment on making change in configmap. 
 
 ```sh
